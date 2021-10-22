@@ -3682,13 +3682,13 @@ if(s==null)s=$.U=H.aM()
 s.HC($.KD)
 return r},
 amH(a){var s,r,q,p,o,n="defineProperty"
-$.aaQ="https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/"
+$.aaQ="https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.28.0/bin/"
 if(self.window.flutterCanvasKit==null){s=$.wS
 if(s!=null)C.DH.bH(s)
 s=document
 r=s.createElement("script")
 $.wS=r
-r.src="https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.24.0/bin/canvaskit.js"
+r.src="https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.28.0/bin/canvaskit.js"
 r=new P.Y($.N,t.U)
 $.aaM=r
 q=H.bQ("loadSubscription")
