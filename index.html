@@ -47,18 +47,22 @@
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <div id="loading" class="loading">
-    <img width="100" src="icons/loading.gif">
+    <img width="100" src="loading.gif">
     <br>
     <font color="black">加载中，请稍候...</font>
   </div>
 
   <script>
-    var serviceWorkerVersion = '1974936302';
+    var serviceWorkerVersion = '426427874';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
         return;
       }
+
+      var loadingElement = document.getElementById("loading");
+      loadingElement.parentElement.removeChild(loadingElement);
+
       scriptLoaded = true;
       var scriptTag = document.createElement('script');
       scriptTag.src = 'main.dart.js';
@@ -78,8 +82,6 @@
             function waitForActivation(serviceWorker) {
               serviceWorker.addEventListener('statechange', () => {
                 if (serviceWorker.state == 'activated') {
-                  var loadingElement = document.getElementById("loading");
-                  loadingElement.parentElement.removeChild(loadingElement);
                   console.log('Installed new service worker.');
                   loadMainDartJs();
                 }
