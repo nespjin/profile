@@ -53,21 +53,21 @@
   </div>
 
   <script>
-    var serviceWorkerVersion = '3130623709';
+    var serviceWorkerVersion = '1173173418';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
         return;
       }
 
-      var loadingElement = document.getElementById("loading");
-      loadingElement.parentElement.removeChild(loadingElement);
-
       scriptLoaded = true;
       var scriptTag = document.createElement('script');
       scriptTag.src = 'main.dart.js';
       scriptTag.type = 'application/javascript';
       document.body.append(scriptTag);
+
+      var loadingElement = document.getElementById("loading");
+      loadingElement.parentElement.removeChild(loadingElement);
     }
 
     if ('serviceWorker' in navigator) {
