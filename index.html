@@ -53,7 +53,12 @@
   </div>
 
   <script>
-    var serviceWorkerVersion = '500273830';
+    function removeLoading() {
+      var loadingElement = document.getElementById("loading");
+      loadingElement.parentElement.removeChild(loadingElement);
+    }
+
+    var serviceWorkerVersion = '369458577';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -81,9 +86,6 @@
                 if (serviceWorker.state == 'activated') {
                   console.log('Installed new service worker.');
                   loadMainDartJs();
-
-                  var loadingElement = document.getElementById("loading");
-                  loadingElement.parentElement.removeChild(loadingElement);
                 }
               });
             }
@@ -101,9 +103,6 @@
               // Existing service worker is still good.
               console.log('Loading app from service worker.');
               loadMainDartJs();
-
-              var loadingElement = document.getElementById("loading");
-              loadingElement.parentElement.removeChild(loadingElement);
             }
           });
 
