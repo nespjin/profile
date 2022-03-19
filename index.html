@@ -46,12 +46,12 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
-  <div class="loading">
+  <div id="loading" class="loading">
     <font color="black">加载中，请稍候...</font>
   </div>
 
   <script>
-    var serviceWorkerVersion = '788494102';
+    var serviceWorkerVersion = '2852657329';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -76,6 +76,8 @@
             function waitForActivation(serviceWorker) {
               serviceWorker.addEventListener('statechange', () => {
                 if (serviceWorker.state == 'activated') {
+                  var loadingElement = document.getElementById("loading");
+                  loadingElement.parentElement.removeChild(loadingElement);
                   console.log('Installed new service worker.');
                   loadMainDartJs();
                 }
